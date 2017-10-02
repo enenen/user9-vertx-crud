@@ -62,6 +62,7 @@ public class CrudApplication extends AbstractVerticle {
   private Single<HttpServer> initHttpServer(Router router, JDBCClient client) {
     store = new JdbcProductStore(client);
     // Create the HTTP server and pass the "accept" method to the request handler.
+    System.out.println("YT: starting http server...");
     return vertx
       .createHttpServer()
       .requestHandler(router::accept)
